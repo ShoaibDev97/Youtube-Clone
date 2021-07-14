@@ -6,7 +6,7 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: rgb(253, 226, 213);
+  background-color: #eee;
 }
 
 .contain {
@@ -24,9 +24,17 @@ body {
 .video-list {
   margin: 0.5rem;
   width: 30%;
-  float: left;
+  float: right;
+  background-color: white;
+  padding: 10px;
 }
-
+.content .header {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.field label {
+  font-size: 18px !important;
+}
 @media only screen and (max-width: 1000px) {
   .video {
     width: 100%;
@@ -37,5 +45,8 @@ body {
     margin: 0.5rem;
     width: 100%;
     float: left;
+  }
+  .search {
+    width: 100%;
   }
 }

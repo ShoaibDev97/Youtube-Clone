@@ -17,31 +17,19 @@ class App extends Component {
 
   onTermSubmit = async (term) => {
     // Object way With Axios
-    const response = await axios.get(
-      "https://www.googleapis.com/youtube/v3/search",
-      {
-        params: {
-          part: "snippet",
-          maxResults: 10,
-          key: "AIzaSyASxAvF-j2otv2e2f0VQ-Yg-IGZZUw-ilk",
-          q: term,
-          type: "video",
-        },
-      }
-    );
+    const response = await axios.get("https://www.googleapis.com/youtube/v3/search", {
+      params: {
+        part: "snippet",
+        maxResults: 10,
+        key: "AIzaSyASxAvF-j2otv2e2f0VQ-Yg-IGZZUw-ilk",
+        q: term,
+        type: "video",
+      },
+    });
     this.setState({
       videos: response.data.items,
       selectedVideo: response.data.items[0],
     });
-
-    // const response = await youtube.get("/search", {
-    //   params: {
-    //     key: "AIzaSyASxAvF-j2otv2e2f0VQ-Yg-IGZZUw-ilk",
-    //     q: term,
-    //   },
-    // });
-
-    // console.log(response.data);
   };
 
   onVideoSelect = (video) => {
@@ -59,10 +47,7 @@ class App extends Component {
           </div>
 
           <div className="video-list">
-            <VideoList
-              videos={this.state.videos}
-              onVideoSelect={this.onVideoSelect}
-            />
+            <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
           </div>
         </div>
       </div>
